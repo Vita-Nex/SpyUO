@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:this="clr-namespace:Ultima.Spy.Application">
+
+	<Style x:Key="ToolbarBorder" TargetType="Border">
+		<Setter Property="Background" Value="{StaticResource PanelBackground}"/>
+		<Setter Property="CornerRadius" Value="3"/>
+	</Style>
+
+	<Style x:Key="ToolbarTitleText" TargetType="Label">
+		<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+	</Style>
+
+	<Style x:Key="ToolbarButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+		<Setter Property="Padding" Value="2" />
+		<Setter Property="Margin" Value="1" />
+		<Setter Property="Width" Value="21"/>
+	</Style>
+
+	<Style x:Key="ToolbarToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButton}">
+		<Setter Property="Padding" Value="2" />
+		<Setter Property="Margin" Value="1" />
+		<Setter Property="Width" Value="21"/>
+	</Style>
+
+	<Style x:Key="ToolbarButtonImage" TargetType="Image">
+		<Setter Property="Stretch" Value="Uniform" />
+	</Style>
+
+	<this:NullConverter x:Key="NullConverter" />
+	<this:NotificationImageConverter x:Key="NotificationImageConverter" />
+	
+	<this:UltimaPacketValueConverter x:Key="UltimaPacketValueConverter" />
+	<this:UltimaPacketPropertyValueConverter x:Key="UltimaPacketPropertyValueConverter" />
+	<this:UltimaPacketTitleConverter x:Key="UltimaPacketTitleConverter" />
+	<this:UltimaPacketDirectionConverter x:Key="UltimaPacketDirectionConverter" />
+	<this:UltimaPacketTimeConverter x:Key="UltimaPacketTimeConverter" />
+	<this:UltimaPacketMusicConverter x:Key="UltimaPacketMusicConverter" />
+	<this:UltimaPacketMusicTitleConverter x:Key="UltimaPacketMusicTitleConverter" />
+	<this:UltimaPacketSoundConverter x:Key="UltimaPacketSoundConverter" />
+	<this:UltimaPacketSoundTitleConverter x:Key="UltimaPacketSoundTitleConverter" />
+	<this:UltimaPacketTextureConverter x:Key="UltimaPacketTextureConverter" />
+	<this:UltimaPacketClilocConverter x:Key="UltimaPacketClilocConverter" />
+	<this:UltimaPacketBodyConverter x:Key="UltimaPacketBodyConverter" />
+</ResourceDictionary>

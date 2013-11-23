@@ -1,0 +1,28 @@
+﻿<Application x:Class="Ultima.Spy.Application.App"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				StartupUri="MainWindow.xaml">
+	<Application.Resources>
+
+	<ResourceDictionary>
+		<ResourceDictionary.MergedDictionaries>
+			<ResourceDictionary Source="Themes/Generic.xaml" />
+			<ResourceDictionary Source="Controls/Native/ScrollViewer.xaml" />
+			<ResourceDictionary Source="Controls/Native/Button.xaml" />
+			<ResourceDictionary Source="Controls/Native/ToggleButton.xaml" />
+			<ResourceDictionary Source="Controls/Native/CheckBox.xaml" />
+			<ResourceDictionary Source="Controls/Native/ComboBox.xaml" />
+			<ResourceDictionary Source="Controls/Native/DataGrid.xaml" />
+			<ResourceDictionary Source="Controls/Native/Expander.xaml" />
+			<ResourceDictionary Source="Controls/Native/ListBox.xaml" />
+			<ResourceDictionary Source="Controls/Native/Slider.xaml" />
+			<ResourceDictionary Source="Controls/Native/TextBox.xaml" />
+			<ResourceDictionary Source="Controls/Native/TreeView.xaml" />
+			<ResourceDictionary Source="Controls/Native/TabControl.xaml" />
+			<ResourceDictionary Source="Themes/Common.xaml" />
+			<ResourceDictionary Source="Controls/UltimaPacketPropertyTemplates.xaml" />
+		</ResourceDictionary.MergedDictionaries>
+	</ResourceDictionary>
+
+	</Application.Resources>
+</Application>

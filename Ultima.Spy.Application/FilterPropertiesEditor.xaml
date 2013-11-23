@@ -1,0 +1,158 @@
+﻿<Window x:Class="Ultima.Spy.Application.FilterPropertiesEditor"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:this="clr-namespace:Ultima.Spy.Application"
+		Title="{Binding Path=Definition,StringFormat='\{0\} Filters'}" 
+		Height="250" Width="500" Icon="/SpyUO;component/SpyUO.ico"
+		Background="{StaticResource PanelBackground}" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner">
+	<Window.Resources>
+
+		<Style x:Key="FilterListItemText" TargetType="CheckBox" BasedOn="{StaticResource DefaultCheckBox}">
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="FontSize" Value="12" />
+		</Style>
+
+		<DataTemplate x:Key="FilterListItem">
+			<CheckBox x:Name="Text" IsChecked="{Binding IsChecked}" Content="{Binding Text}" Style="{StaticResource FilterListItemText}"/>
+			<DataTemplate.Triggers>
+				<DataTrigger Binding="{Binding IsValid}" Value="False">
+					<Setter TargetName="Text" Property="Foreground" Value="Red" />
+				</DataTrigger>
+			</DataTemplate.Triggers>
+		</DataTemplate>
+
+		<Style x:Key="FilterList" TargetType="ListBox" BasedOn="{StaticResource DefaultListBox}">
+			<Setter Property="SelectionMode" Value="Single" />
+			<Setter Property="ItemTemplate" Value="{StaticResource FilterListItem}" />
+			<Setter Property="Margin" Value="1" />
+		</Style>
+
+		<Style x:Key="FilterCombo" TargetType="ComboBox" BasedOn="{StaticResource DefaultComboBox}" >
+			<Setter Property="Margin" Value="3" />
+			<Setter Property="IsEnabled" Value="False" />
+		</Style>
+
+		<Style x:Key="FilterValue" TargetType="TextBox" BasedOn="{StaticResource DefaultTextBox}">
+			<Setter Property="Margin" Value="3" />
+			<Setter Property="Background" Value="{StaticResource TextBoxBackground}" />
+			<Setter Property="BorderThickness" Value="0" />
+		</Style>
+
+		<Style x:Key="FilterTitle" TargetType="TextBlock">
+			<Setter Property="Margin" Value="4" />
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="FontSize" Value="12" />
+		</Style>
+
+		<Style x:Key="FilterSampleValue" TargetType="TextBlock">
+			<Setter Property="Margin" Value="4" />
+			<Setter Property="Foreground" Value="#FFb8d446" />
+			<Setter Property="FontSize" Value="12" />
+		</Style>
+
+		<Style x:Key="FilterText" TargetType="TextBlock">
+			<Setter Property="Margin" Value="4,0,4,0" />
+			<Setter Property="Foreground" Value="#FFb8d446" />
+			<Setter Property="FontSize" Value="11" />
+			<Setter Property="TextWrapping" Value="Wrap" />
+		</Style>
+
+		<Style x:Key="FilterFooterPanel" TargetType="StackPanel">
+			<Setter Property="Orientation" Value="Horizontal" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+		
+		<Style x:Key="FilterButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+			<Setter Property="Width" Value="60" />
+			<Setter Property="Margin" Value="2" />
+		</Style>
+
+		<Style x:Key="FilterToolbarButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}" >
+			<Setter Property="Width" Value="23" />
+			<Setter Property="Height" Value="23" />
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="Padding" Value="2" />
+		</Style>
+
+		<Style x:Key="FilterToolbarImage" TargetType="Image">
+			<Setter Property="Stretch" Value="Uniform" />
+		</Style>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="5" />
+			<ColumnDefinition Width="2*" />
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="25" />
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Grid.Column="0">
+			<Button Style="{StaticResource FilterToolbarButton}" Click="AddButton_Click" ToolTip="Add property filter">
+				<Image Source="Images/Plus.png" />
+			</Button>
+			<Button Style="{StaticResource FilterToolbarButton}" Click="RemoveButton_Click" ToolTip="Remove selected property filter">
+				<Image Source="Images/Minus.png" />
+			</Button>
+		</StackPanel>
+
+		<ListBox x:Name="Filters" Grid.Row="0" Grid.Column="1" 
+				 Style="{StaticResource FilterList}"
+				 SelectionChanged="Filters_SelectionChanged"
+				 KeyDown="Filters_KeyDown" />
+
+		<GridSplitter Grid.Row="0" Grid.Column="2" />
+
+		<Grid Grid.Row="0" Grid.Column="3">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="Property" Style="{StaticResource FilterTitle}" />
+			<TextBlock Grid.Row="0" Grid.Column="1" Text="Operation" Style="{StaticResource FilterTitle}" />
+			<TextBlock Grid.Row="0" Grid.Column="2" Text="Value(s)" Style="{StaticResource FilterTitle}" />
+
+			<ComboBox x:Name="Definition" Grid.Row="1" Grid.Column="0" Style="{StaticResource FilterCombo}"
+					  SelectedValue="{Binding ElementName=Filters, Path=SelectedValue.Definition}"
+					  SelectionChanged="Definition_SelectionChanged"/>
+
+			<ComboBox x:Name="Operation" Grid.Row="1" Grid.Column="1" Style="{StaticResource FilterCombo}"
+					  SelectedValue="{Binding ElementName=Filters, Path=SelectedValue.Operation}"
+					  SelectionChanged="Operation_SelectionChanged"/>
+
+			<TextBox x:Name="Value" Grid.Row="1" Grid.Column="2" Style="{StaticResource FilterValue}" IsEnabled="False"
+					 Text="{Binding ElementName=Filters, Path=SelectedValue.Value,UpdateSourceTrigger=PropertyChanged}"/>
+
+			<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Sample value:" Style="{StaticResource FilterTitle}" />
+					<TextBlock x:Name="SampleValue" Style="{StaticResource FilterSampleValue}" />
+				</StackPanel>
+				<TextBlock x:Name="Sample" Style="{StaticResource FilterText}" />
+				<TextBlock Text="Note:" Style="{StaticResource FilterTitle}" />
+				<TextBlock Text="You can enter multiple values for operation IN and CONTAINS, by separating them with comma. "
+						   Style="{StaticResource FilterText}"/>
+			</StackPanel>
+		</Grid>
+
+		<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource FilterFooterPanel}">
+			<Button Content="Cancel" IsCancel="True" Style="{StaticResource FilterButton}" />
+			<Button Content="Confirm" Style="{StaticResource FilterButton}" Click="ConfirmButton_Click" />
+		</StackPanel>
+	</Grid>
+</Window>

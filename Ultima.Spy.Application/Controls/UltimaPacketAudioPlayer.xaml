@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Ultima.Spy.Application.UltimaPacketAudioPlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Unloaded="UserControl_Unloaded" Loaded="UserControl_Loaded"
+			 DataContext="{Binding File,RelativeSource={RelativeSource Self}}"
+             d:DesignHeight="30" d:DesignWidth="300">
+	
+	<UserControl.Resources>
+		<Style x:Key="PlayerContainer" TargetType="Border">
+			<!--<Setter Property="CornerRadius" Value="3" />
+			<Setter Property="Background" Value="{StaticResource ButtonBackground}" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="BorderBrush" Value="{StaticResource ButtonBorder}" />-->
+		</Style>
+
+		<Style x:Key="PlayerButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="Padding" Value="1" />
+			<Setter Property="Width" Value="21" />
+			<Setter Property="IsEnabled" Value="False" />
+		</Style>
+
+		<Style x:Key="PlayerButtonImage" TargetType="Image">
+			<Setter Property="Stretch" Value="Uniform" />
+		</Style>
+
+		<Style x:Key="PlayerSlider" TargetType="Slider" BasedOn="{StaticResource DefaultSlider}">
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="Orientation" Value="Horizontal" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="SmallChange" Value="1000" />
+			<Setter Property="LargeChange" Value="1000" />
+			<Setter Property="IsEnabled" Value="False" />
+		</Style>
+
+		<Image x:Key="PlayerPlayImage" Source="/SpyUO;component/Images/MediaPlay.png" Style="{StaticResource PlayerButtonImage}" />
+		<Image x:Key="PlayerPauseImage" Source="/SpyUO;component/Images/MediaPause.png" Style="{StaticResource PlayerButtonImage}"  />
+	</UserControl.Resources>
+
+	<Border Style="{StaticResource PlayerContainer}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<Button Grid.Column="0" x:Name="Save" IsEnabled="{Binding Converter={StaticResource NullConverter}}" Click="Save_Click" Style="{StaticResource PlayerButton}" ToolTip="Save File">
+				<Image Source="/SpyUO;component/Images/Save.png" Style="{StaticResource PlayerButtonImage}" />
+			</Button>
+			<Button Grid.Column="1" x:Name="PlayPause" IsEnabled="{Binding Converter={StaticResource NullConverter}}" Click="PlayPause_Click" Style="{StaticResource PlayerButton}" ToolTip="Play/Pause" />
+			<Slider Grid.Column="2" x:Name="Slider" IsEnabled="{Binding Converter={StaticResource NullConverter}}" ValueChanged="Slider_ValueChanged" Style="{StaticResource PlayerSlider}"  />
+		</Grid>
+	</Border>
+</UserControl>

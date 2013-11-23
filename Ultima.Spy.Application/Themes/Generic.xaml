@@ -1,0 +1,87 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<SolidColorBrush x:Key="PropertyTitleBackground" Color="#FF707070" />
+	<SolidColorBrush x:Key="PropertyListTitleBackground" Color="#FF909090" />
+	<SolidColorBrush x:Key="ObjectTitleBackground" Color="#FF909090" />
+	<SolidColorBrush x:Key="FilterStatusOn" Color="LimeGreen" />
+	<SolidColorBrush x:Key="FilterStatusOff" Color="Red" />
+	<SolidColorBrush x:Key="LinkForeground" Color="#FFFF9853" />
+
+
+	<SolidColorBrush x:Key="WindowBackground" Color="#FF444444" />
+	<SolidColorBrush x:Key="PanelBackground" Color="#FF595959" />
+	<SolidColorBrush x:Key="PanelForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="PanelSecondaryForeground" Color="#FF1A1A1A" />
+
+	<SolidColorBrush x:Key="TextBoxBackground" Color="#FF333333" />
+	<SolidColorBrush x:Key="TextBoxForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="TextBoxDisabledBackground" Color="#FF424242" />
+	<SolidColorBrush x:Key="TextBoxDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="#FFF0F0F0" />
+
+	<SolidColorBrush x:Key="ComboBackground" Color="#FF333333" />
+	<SolidColorBrush x:Key="ComboForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="ComboDisabledBackground" Color="#FF424242" />
+	<SolidColorBrush x:Key="ComboDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="ComboItemMouseOverBackground" Color="#FFBDBDBD" />
+	<SolidColorBrush x:Key="ComboItemMouseOverForeground" Color="#FF333333" />
+	<SolidColorBrush x:Key="ComboButtonBackground" Color="#FF808080" />
+	<SolidColorBrush x:Key="ComboButtonMouseOverBackground" Color="#FFAAAAAA" />
+	<SolidColorBrush x:Key="ComboPanelBorder" Color="#FF595959" />
+
+	<SolidColorBrush x:Key="ButtonBackground" Color="#FF595959" />
+	<SolidColorBrush x:Key="ButtonForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="ButtonBorder" Color="#FF333333" />
+	<SolidColorBrush x:Key="ButtonDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="ButtonDisabledOverlay" Color="#32F0F0F0" />
+	<SolidColorBrush x:Key="ButtonMouseOverBackground" Color="#FFAAAAAA" />
+	<SolidColorBrush x:Key="ButtonMouseOverForeground" Color="#FF1A1A1A" />
+	<SolidColorBrush x:Key="ButtonPressedBackground" Color="#FF424242" />
+	<SolidColorBrush x:Key="ButtonPressedBorder" Color="#FF1A1A1A" />
+	<SolidColorBrush x:Key="RibbonButtonMouseOverBackground" Color="#FFFF9853" />
+	<SolidColorBrush x:Key="RibbonButtonPressedBackground" Color="#FFFF9853" />
+
+
+	<SolidColorBrush x:Key="CheckBackground" Color="#FF666666" />
+	<SolidColorBrush x:Key="CheckForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="CheckBorder" Color="#FF333333" />
+	<SolidColorBrush x:Key="CheckMouseOverBorder" Color="#FFE5E5E5" />
+	<SolidColorBrush x:Key="CheckDisabledBackground" Color="#FF424242" />
+	<SolidColorBrush x:Key="CheckDisabledForeground" Color="#FF8C8C8C" />
+
+	<SolidColorBrush x:Key="ExpanderBackground" Color="#FF595959" />
+	<SolidColorBrush x:Key="ExpanderForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="ExpanderDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="ExpanderButtonBackground" Color="#FFACACAC" />
+	<SolidColorBrush x:Key="ExpanderButtonMouseOverBackground" Color="#FFC8C8C8" />
+
+	<SolidColorBrush x:Key="ListBackground" Color="#FF333333" />
+	<SolidColorBrush x:Key="ListForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="ListDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="ListItemMouseOverBackground" Color="#FF454545" />
+	<SolidColorBrush x:Key="ListItemSelectedBackground" Color="#FFBDBDBD" />
+	<SolidColorBrush x:Key="ListItemSelectedForeground" Color="#FF333333" />
+
+	<SolidColorBrush x:Key="ScrollBackground" Color="#FF3D3D3D" />
+	<SolidColorBrush x:Key="ScrollButtonBackground" Color="#FF808080" />
+	<SolidColorBrush x:Key="ScrollButtonMouseOverBackground" Color="#FFCCCCCC" />
+	<SolidColorBrush x:Key="ScrollButtonPressedBackground" Color="#FFE5E5E5" />
+
+	<SolidColorBrush x:Key="TabPanelBackground" Color="#FF444444" />
+	<SolidColorBrush x:Key="TabPanelForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="TabPanelDisabledForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="TabPanelItemBackground" Color="#FF333333" />
+	<SolidColorBrush x:Key="TabPanelItemForeground" Color="#FF8C8C8C" />
+	<SolidColorBrush x:Key="TabPanelItemPressedBackground" Color="#FF595959" />
+	<SolidColorBrush x:Key="TabPanelItemMouseOverBackground" Color="#FF525252" />
+
+	<SolidColorBrush x:Key="DataGridForeground" Color="#FFF0F0F0" />
+	<SolidColorBrush x:Key="DataGridRowBackgroundEven" Color="#FF444444" />
+	<SolidColorBrush x:Key="DataGridRowBackgroundOdd" Color="#FF333333" />
+	<SolidColorBrush x:Key="DataGridRowSelectedBackground" Color="#FFBDBDBD" />
+	<SolidColorBrush x:Key="DataGridRowSelectedForeground" Color="#FF333333" />
+	<SolidColorBrush x:Key="DataGridHeaderBackground" Color="#FF333333" />
+</ResourceDictionary>
+	

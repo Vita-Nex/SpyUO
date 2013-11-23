@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="SpyUO 2.0" Language="1033" Version="1.0.0.0" Manufacturer="Impossibru" UpgradeCode="634C20F1-A7E1-4099-A6A5-FE83A17923C2">
+		<Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine" />
+		<Icon Id="SpyIcon" SourceFile="$(var.Ultima.Spy.Application.ProjectDir)SpyUO.ico" />
+		<Media Id="1" EmbedCab="yes" Cabinet="Setup.cab" />
+
+		<Feature Id="ProductFeature" Title="SpyUO 2.0 Setup" Level="1" Display="expand" ConfigurableDirectory='INSTALLFOLDER'>
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ProgramMenuShortcuts"/>
+		</Feature>
+
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		<Property Id="ARPPRODUCTICON" Value="SpyIcon" />
+		<Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+
+		<Upgrade Id="634C20F1-A7E1-4099-A6A5-FE83A17923C2">
+			<UpgradeVersion Minimum="0.0.0"
+											IncludeMinimum="yes"
+											OnlyDetect="no"
+											Maximum="1.0.0"
+											IncludeMaximum="no"
+											Property="PREVIOUSFOUND" />
+		</Upgrade>
+		<InstallExecuteSequence>
+			<RemoveExistingProducts After="InstallInitialize"/>
+		</InstallExecuteSequence>
+		<UIRef Id="WixUI_Mondo"/>
+		<WixVariable Id="WixUIDialogBmp" Value="$(sys.CURRENTDIR)\Files\Welcome.bmp" />
+		<WixVariable Id="WixUIBannerBmp" Value="$(sys.CURRENTDIR)\Files\Banner.bmp" />
+		<WixVariable Id="WixUIExclamationIcon" Value="$(sys.CURRENTDIR)\Files\Icon.bmp" />
+		<WixVariable Id="WixUIInfoIco" Value="$(sys.CURRENTDIR)\Files\Icon.bmp" />
+		<WixVariable Id="WixUILicenseRtf" Value="$(sys.CURRENTDIR)\Files\GPL.rtf" />
+
+		<UI>
+			<TextStyle Id="TitleFont" FaceName="!(loc.Advanced_Font_FaceName)" Size="!(loc.Advanced_Font_Title_Size)" Red="255" Green="255" Blue="255" Bold="yes" />
+			<TextStyle Id="SubtitleFont" FaceName="!(loc.Advanced_Font_FaceName)" Size="!(loc.Advanced_Font_Normal_Size)" Red="255" Green="255" Blue="255"  />
+		</UI>
+		<Condition Message="This application only runs .NET framework 4.0 or greater.">
+			MsiNetAssemblySupport >= "4.0.30319"
+		</Condition>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SpyUO 2.0">
+					<Directory Id="Data" Name="Data">
+					</Directory>
+				</Directory>
+			</Directory>
+			<Directory Id="DesktopFolder" />
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ProgramMenu" Name="SpyUO 2.0">
+					<Component Id="ProgramMenuShortcuts" Guid="2F5FEC61-183C-427F-A076-436F53257631">
+						<Shortcut Id="ProgramFilesShortcut" Name="SpyUO 2.0" WorkingDirectory="INSTALLFOLDER" Directory="ProgramMenu" Icon="SpyIcon" Target="[!Executable]" />
+						<RemoveFolder Id="ProgramMenu" On="uninstall"/>
+						<RegistryValue Root="HKCU" Key="Software\SpyUO" Name="Installed" Type="integer" Value="1" KeyPath="yes"/>
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" >
+			 <Component Id="ProductComponent" Guid="B14796E2-6F9C-4EE2-AD65-68A0ECC20894" Directory="INSTALLFOLDER">
+				 <File Id="Executable" Name="$(var.Ultima.Spy.Application.TargetFileName)" Source="$(var.Ultima.Spy.Application.TargetPath)" DiskId="1" KeyPath="yes" Vital="yes">
+					 <Shortcut Id="DesktopShortcut" Name="$(var.Ultima.Spy.Application.TargetFileName)" Icon="SpyUO.ico" WorkingDirectory="INSTALLFOLDER" Directory="DesktopFolder" Advertise="yes">
+						 <Icon Id="SpyUO.ico" SourceFile="$(var.Ultima.Spy.Application.ProjectDir)SpyUO.ico" />
+					 </Shortcut>
+				 </File>
+				 <File Id="Ultima.Analyzer.dll" Name="$(var.Ultima.Analyzer.TargetFileName)" Source="$(var.Ultima.Analyzer.TargetPath)" DiskId="1" Vital="yes" />
+				 <File Id="Ultima.Package.dll" Name="$(var.Ultima.Package.TargetFileName)" Source="$(var.Ultima.Package.TargetPath)" DiskId="1" Vital="yes" />
+				 <File Id="Ultima.Spy.dll" Name="$(var.Ultima.Spy.TargetFileName)" Source="$(var.Ultima.Spy.TargetPath)" DiskId="1"  Vital="yes" />
+				 <File Name="zlibwapi.dll" Source="$(var.Ultima.Package.ProjectDir)zlibwapi.dll" Vital="yes" />
+			 </Component>
+			<Component Id="DataComponent" Guid="0B6DBFF1-3D2C-4207-98DE-DB27CDCAA988" Directory="Data">
+				<File Name="ItemDefinitions.xml" Source="$(var.Ultima.Spy.Application.ProjectDir)Data\ItemDefinitions.xml" />
+				<File Name="ItemPropertyDefinitions.xml" Source="$(var.Ultima.Spy.Application.ProjectDir)Data\ItemPropertyDefinitions.xml" />
+				<File Name="PacketTables.xml" Source="$(var.Ultima.Spy.ProjectDir)Data\PacketTables.xml" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

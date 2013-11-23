@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tables>
+	<!-- tables attributes: 
+					id - packet ID (index in parent table) - mandatory
+					name - name of the table (used in packet filter) - mandatory
+					type - child ID type (can be either 'byte' or 'word') - optional( default: 'byte' )
+					offset - child ID offset in bytes - optional( default: '0' ) -->
+	<table id="0x12" name="Text Command" offset="2" />
+	<table id="0x71" name="Bulleting Board" />
+	<table id="0xBF" name="Extended Command" type="word" offset="2">
+		<table id="0x06" name="Party" />
+		<table id="0x14" name="Context Menu" type="word" />
+		<table id="0x19" name="Miscellaneous Status" />
+		<table id="0x20" name="House Customization" offset="4" />
+	</table>
+	<table id="0xD7" name="Encoded Command" type="word" offset="6" />
+	<table id="0xDA" name="Mahjong Game" type="word" offset="6" />
+</tables>

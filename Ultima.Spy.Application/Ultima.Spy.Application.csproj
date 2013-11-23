@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E3E831C-E65D-4189-8715-72B4322E8332}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ultima.Spy.Application</RootNamespace>
+    <AssemblyName>SpyUO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ultima.Spy.Application.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SpyUO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryWindow.xaml.cs">
+      <DependentUpon>BinaryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClilocWindow.xaml.cs">
+      <DependentUpon>ClilocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UltimaPacketAudioPlayer.xaml.cs">
+      <DependentUpon>UltimaPacketAudioPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UltimaPacketBinaryView.xaml.cs">
+      <DependentUpon>UltimaPacketBinaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UltimaPacketTextureView.xaml.cs">
+      <DependentUpon>UltimaPacketTextureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Analyzers\UltimaDefaultLootGroup.cs" />
+    <Compile Include="Helpers\Analyzers\UltimaItemCounter.cs" />
+    <Compile Include="Helpers\Analyzers\UltimaLootAnalyzer.cs" />
+    <Compile Include="Helpers\Analyzers\UltimaPropertyCounter.cs" />
+    <Compile Include="Helpers\AudioFile.cs" />
+    <Compile Include="Helpers\Generators\UltimaGumpGenerator.cs" />
+    <Compile Include="Helpers\Generators\UltimaMobileGenerator.cs" />
+    <Compile Include="Helpers\Generators\UltimaClassWriter.cs" />
+    <Compile Include="Helpers\Generators\UltimaItemDefinitions.cs" />
+    <Compile Include="Helpers\Generators\UltimaItemGenerator.cs" />
+    <Compile Include="Helpers\Generators\UltimaItemProperties.cs" />
+    <Compile Include="Helpers\Globals.cs" />
+    <Compile Include="Helpers\Notification.cs" />
+    <Compile Include="Helpers\Generators\UltimaClilocArgumentParser.cs" />
+    <Compile Include="Helpers\SimpleCache.cs" />
+    <Compile Include="Helpers\SmartObservableCollection.cs" />
+    <Compile Include="Helpers\TextureFile.cs" />
+    <Compile Include="Helpers\UltimaLegacyAssets.cs" />
+    <Compile Include="Helpers\UltimaPackageAssets.cs" />
+    <Compile Include="LootAnalyzerWindow.xaml.cs">
+      <DependentUpon>LootAnalyzerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RelativesWindow.xaml.cs">
+      <DependentUpon>RelativesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterPropertiesEditor.xaml.cs">
+      <DependentUpon>FilterPropertiesEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Commands.cs" />
+    <Compile Include="Helpers\Converters.cs" />
+    <Compile Include="Helpers\Interfaces.cs" />
+    <Compile Include="Helpers\Filter\UltimaPacketFilterEntry.cs" />
+    <Compile Include="Helpers\Filter\UltimaPacketFilterParser.cs" />
+    <Compile Include="Helpers\Filter\UltimaPacketFilterProperty.cs" />
+    <Compile Include="Helpers\Filter\UltimaPacketFilterTable.cs" />
+    <Compile Include="Helpers\Filter\UltimaPacketFilter.cs" />
+    <Compile Include="Helpers\SpyHelper.cs" />
+    <Compile Include="ProcessListWindow.xaml.cs">
+      <DependentUpon>ProcessListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesWindow.xaml.cs">
+      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UltimaPacketFilterView.xaml.cs">
+      <DependentUpon>UltimaPacketFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UltimaPacketPropertiesView.xaml.cs">
+      <DependentUpon>UltimaPacketPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BinaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClilocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UltimaPacketAudioPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UltimaPacketTextureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LootAnalyzerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RelativesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\Expander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Native\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Native\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UltimaPacketBinaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilterPropertiesEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ProcessListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\UltimaPacketPropertyTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UltimaPacketFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UltimaPacketPropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\TemplateSelectors.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Attach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FilterEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Minus.png" />
+    <Resource Include="Images\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SpyUO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Binary.gif" />
+    <Resource Include="Images\Bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ultima.Package\Ultima.Package.csproj">
+      <Project>{93D68603-4683-4ED1-AC20-7D1B2C1370B4}</Project>
+      <Name>Ultima.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ultima.Spy\Ultima.Spy.csproj">
+      <Project>{307A0405-9D44-4325-A638-35A91EF88640}</Project>
+      <Name>Ultima.Spy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NotificationError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NotificationWarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NotificationInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MediaPlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MediaPause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NotificationsClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CSharpPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Information.png" />
+    <Resource Include="Images\Key.png" />
+    <Resource Include="Images\Missing.png" />
+    <Resource Include="Images\Settings.png" />
+    <Resource Include="Images\Briefcase.png" />
+    <Resource Include="Images\ChartPie.png" />
+    <Content Include="Data\ItemPropertyDefinitions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\ItemDefinitions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{307A0405-9D44-4325-A638-35A91EF88640}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ultima.Spy</RootNamespace>
+    <AssemblyName>Ultima.Spy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Ultima.Package\Helpers\Zlib.cs">
+      <Link>Helpers\Zlib.cs</Link>
+    </Compile>
+    <Compile Include="ClientSpy.cs" />
+    <Compile Include="EnhancedClientSpy.cs" />
+    <Compile Include="Helpers\BigEndianReader.cs" />
+    <Compile Include="Packets\CompressedGump.cs" />
+    <Compile Include="Packets\DeathAnimation.cs" />
+    <Compile Include="Packets\GenericGump.cs" />
+    <Compile Include="Helpers\AddressAndRegisters.cs" />
+    <Compile Include="BaseSpy.cs" />
+    <Compile Include="ClassicClientSpy.cs" />
+    <Compile Include="Helpers\ClientSpyStarter.cs" />
+    <Compile Include="Helpers\NativeMethods.cs" />
+    <Compile Include="Packets\ContainerDisplay.cs" />
+    <Compile Include="Packets\ContainerContentUpdate.cs" />
+    <Compile Include="Packets\ContainerContent.cs" />
+    <Compile Include="Packets\AsciiMessage.cs" />
+    <Compile Include="Packets\Buffs.cs" />
+    <Compile Include="Packets\GraphicalEffect.cs" />
+    <Compile Include="Packets\GumpResponse.cs" />
+    <Compile Include="Packets\MobileAnimation.cs" />
+    <Compile Include="Packets\MobileName.cs" />
+    <Compile Include="Packets\MobileUpdate.cs" />
+    <Compile Include="Packets\QueryPropertiesRequest.cs" />
+    <Compile Include="Packets\Core\UltimaPacketTableEntry.cs" />
+    <Compile Include="Packets\QueryPropertiesResponse.cs" />
+    <Compile Include="Packets\ShopList.cs" />
+    <Compile Include="Packets\PlayMusic.cs" />
+    <Compile Include="Packets\PlaySound.cs" />
+    <Compile Include="Packets\UnicodeMessage.cs" />
+    <Compile Include="Packets\Damage.cs" />
+    <Compile Include="Packets\Core\UltimaPacketClassDefinition.cs" />
+    <Compile Include="Packets\Core\UltimaPacketPropertyDefinition.cs" />
+    <Compile Include="Packets\Core\UltimaPacketPropertyAttributes.cs" />
+    <Compile Include="Packets\Core\UltimaPacketDefinition.cs" />
+    <Compile Include="Packets\Core\UltimaPacket.cs" />
+    <Compile Include="Packets\Core\UltimaPacketAttributes.cs" />
+    <Compile Include="Packets\Core\UltimaPacketPropertyValue.cs" />
+    <Compile Include="Packets\Core\UltimaPacketTable.cs" />
+    <Compile Include="Packets\Core\UltimaPacketValue.cs" />
+    <Compile Include="Packets\MapDetails.cs" />
+    <Compile Include="Packets\MobileIncomming.cs" />
+    <Compile Include="Packets\MobileStatus.cs" />
+    <Compile Include="Packets\WorldObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\SpyException.cs" />
+    <Compile Include="Helpers\SystemInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ultima.Analyzer\Ultima.Analyzer.csproj">
+      <Project>{2E32D54E-C51B-4D9F-90E8-BCE513C348B5}</Project>
+      <Name>Ultima.Analyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\PacketTables.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

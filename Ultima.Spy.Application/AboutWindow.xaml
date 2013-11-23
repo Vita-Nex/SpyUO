@@ -1,0 +1,76 @@
+﻿<Window x:Class="Ultima.Spy.Application.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Icon="/SpyUO;component/SpyUO.ico" Background="{StaticResource WindowBackground}"
+		Title="About" Height="330" Width="460" UseLayoutRounding="True" SnapsToDevicePixels="True" ResizeMode="NoResize"
+		WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" Loaded="Window_Loaded" SizeToContent="Height" >
+	<Window.Resources>
+		<Style x:Key="AboutTitle" TargetType="TextBlock">
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Foreground" Value="{StaticResource LinkForeground}" />
+			<Setter Property="Margin" Value="4" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+		
+		<Style x:Key="AboutSection" TargetType="Border">
+			<Setter Property="Background" Value="{StaticResource PanelBackground}" />
+			<Setter Property="CornerRadius" Value="3" />
+			<Setter Property="Margin" Value="1" />
+		</Style>
+
+		<Style x:Key="AboutImage" TargetType="Image">
+			<Setter Property="Stretch" Value="None" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="VerticalAlignment" Value="Top" />
+		</Style>
+
+		<Style x:Key="AboutLink" TargetType="Hyperlink">
+			<Setter Property="Foreground" Value="{StaticResource LinkForeground}" />
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="TextDecorations" Value="Underline" />
+			<Setter Property="Cursor" Value="Hand" />
+		</Style>
+
+		<Style x:Key="AboutVersion" TargetType="TextBlock">
+			<Setter Property="FontSize" Value="10" />
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="Margin" Value="50,0,2,2" />
+		</Style>
+
+		<Style x:Key="AboutText" TargetType="TextBlock">
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="TextWrapping" Value="Wrap" />
+		</Style>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<Border Style="{StaticResource AboutSection}">
+			<Image Source="Images/Information.png" Style="{StaticResource AboutImage}" />
+		</Border>
+		<StackPanel Grid.Column="1">
+			<Border Style="{StaticResource AboutSection}">
+				<StackPanel>
+					<TextBlock Text="SpyUO 2.0 Copyright (C) 2012 Malganis" Style="{StaticResource AboutTitle}" />
+					<TextBlock x:Name="Version" Style="{StaticResource AboutVersion}" />
+				</StackPanel>
+			</Border>
+			<Border Style="{StaticResource AboutSection}">
+				<TextBlock Text="This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&#x0a;&#x0a;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&#x0a;&#x0a;You should have received a copy of the GNU General Public License along with this program." Style="{StaticResource AboutText}" />
+			</Border>
+			<Border Style="{StaticResource AboutSection}">
+				<TextBlock Margin="2">
+					<Hyperlink NavigateUri="http://www.gnu.org/licenses/" Style="{StaticResource AboutLink}" >
+						<TextBlock Text="http://www.gnu.org/licenses/" />
+					</Hyperlink>
+				</TextBlock>
+			</Border>
+		</StackPanel>
+	</Grid>
+</Window>

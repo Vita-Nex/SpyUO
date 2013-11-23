@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Ultima.Spy.Application.UltimaPacketPropertiesView"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+				xmlns:this="clr-namespace:Ultima.Spy.Application" Background="{StaticResource WindowBackground}"
+				DataContext="{Binding Packet,RelativeSource={RelativeSource Self},Converter={StaticResource UltimaPacketValueConverter}}"
+				mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="230">
+	<UserControl.Resources>
+		<this:UltimaPacketTitleConverter x:Key="PropTitleConverter" />
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="22" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<!-- Header -->
+		<Border Grid.Row="0" Style="{StaticResource ToolbarBorder}">
+			<Label x:Name="HeaderText" Content="{Binding Converter={StaticResource UltimaPacketTitleConverter}}" Style="{StaticResource ToolbarTitleText}" />
+		</Border>
+
+		<Border Grid.Row="1" Style="{StaticResource ToolbarBorder}" Margin="0,2">
+			<StackPanel x:Name="Toolbar" Orientation="Horizontal">
+				<Button Style="{StaticResource ToolbarButton}" 
+						Command="this:UltimaCommand.CopyToClipboard" CommandParameter="{Binding}"
+						Name="CopyToClipboard" Visibility="Collapsed"
+						ToolTip="Copy properties to clipboard">
+					<Image Source="/SpyUO;component/Images/Clipboard.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+				<Button Style="{StaticResource ToolbarButton}" 
+						Command="this:UltimaCommand.OpenInNewWindow" CommandParameter="{Binding Object}"
+						Name="OpenInNewWindow" Visibility="Collapsed"
+						ToolTip="Open properties in new window">
+					<Image Source="/SpyUO;component/Images/Window.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+				<Button Style="{StaticResource ToolbarButton}" 
+						Command="this:UltimaCommand.GenerateClass" CommandParameter="{Binding Object}"
+						Name="Generate" Visibility="Collapsed"
+						ToolTip="Generate RunUO Class">
+					<Image Source="/SpyUO;component/Images/CSharpPage.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+				<Button Style="{StaticResource ToolbarButton}" 
+						Command="this:UltimaCommand.FindRelatives" CommandParameter="{Binding Object}"
+						Name="FindRelatives" Visibility="Collapsed"
+						ToolTip="Finds all packets with identical serial">
+					<Image Source="/SpyUO;component/Images/Key.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+			</StackPanel>
+		</Border>
+
+		<!--Properties-->
+		<Border Grid.Row="2" Style="{StaticResource ToolbarBorder}">
+			<TreeView x:Name="Properties" Style="{StaticResource DefaultTreeView}"
+					  ItemContainerStyle="{x:Null}"
+					  ItemContainerStyleSelector="{StaticResource PropertyContainerSelector}"
+					  ItemsSource="{Binding Path=Properties}"
+					  ItemTemplateSelector="{StaticResource PropertySelector}"/>
+		</Border>
+	</Grid>
+</UserControl>

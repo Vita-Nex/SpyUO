@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<items>
+	<!-- Used to optain RunUO class by item ID.
+
+			group: Describes item group. Can contain 'group' or 'item' elements
+					name - Group name (mandatory)
+					analyze - Determines whether to analyze this group in loot analyzer (default: false)
+					class - Group class name (optional)
+
+			property: Describes property with following attributes.
+					cliloc - Property cliloc (mandatory)
+
+			item: Describes item with following attributes.
+					itemID - List of item IDs separated with comma (mandatory)
+					class - Class name  (mandatory)
+					basePhysical - Default physical resis (optional)
+					baseFire - Default fire resis (optional)
+					baseCold - Default cold resis (optional)
+					basePoison - Default poison resis (optional)
+					baseEnergy - Default energy resis (optional)
+					baseChaos - Default chaos resis (optional)
+					baseDirect - Default direct resis (optional)-->
+	<group name="Weapons" analyze="true" class="BaseWeapon">
+		<group name="Axes">
+			<item itemID="0xF49,0xF4A" class="Axe" />
+			<item itemID="0xF47,0xF48" class="BattleAxe" />
+			<item itemID="0xF4B,0xF4C" class="DoubleAxe" />
+			<item itemID="0xF45,0xF46" class="ExecutionersAxe" />
+			<item itemID="0xF43,0xF44" class="Hatchet" />
+			<item itemID="0x13FB,0x13FA" class="LargeBattleAxe" />
+			<item itemID="0xE86,0xE85" class="Pickaxe" />
+			<item itemID="0x1443,0x1442" class="TwoHandedAxe" />
+			<item itemID="0x13B0,0x13AF" class="WarAxe" />
+			<item itemID="0x2D28,0x2D34" class="OrnateAxe" />
+		</group>
+		<group name="Knives">
+			<item itemID="0x13F6,0x13F7" class="ButcherKnife" />
+			<item itemID="0xEC3,0xEC2" class="Cleaver" />
+			<item itemID="0xF52,0xF51" class="Dagger" />
+			<item itemID="0xEC4,0xEC5" class="SkinningKnife" />
+			<item itemID="0x2D21,0x2D2D" class="AssassinSpike" />
+			<item itemID="0x2D20,0x2D2C" class="ElvenSpellblade" />
+			<item itemID="0x2D22,0x2D2E" class="Leafblade" />
+			<item itemID="0x2D2F,0x2D23" class="WarCleaver" />
+			<item itemID="0x27AD,0x27F8" class="Kama" />
+			<item itemID="0x27A7,0x27F2" class="Lajatang" />
+			<item itemID="0x27AF,0x27FA" class="Sai" />
+			<item itemID="0x27Ab,0x27F6" class="Tekagi" />
+		</group>
+		<group name="Maces">
+			<item itemID="0x13B4,0x13B3" class="Club" />
+			<item itemID="0x143D,0x143C" class="HammerPick" />
+			<item itemID="0xF5C,0xF5D" class="Mace" />
+			<item itemID="0xDF2" class="MagicWand" />
+			<item itemID="0x26C6,0x26BC" class="Scepter" />
+			<item itemID="0x1439,0x1438" class="WarHammer" />
+			<item itemID="0x1407,0x1406" class="WarMace" />
+			<item itemID="0x2D24,0x2D30" class="DiamondMace" />
+			<item itemID="0x27AE,0x27F9" class="Nunchaku" />
+			<item itemID="0x27A3,0x27EE" class="Tessen" />
+			<item itemID="0x27A6,0x27F1" class="Tetsubo" />
+			<item itemID="0xFB4" class="SledgeHammer" /> <!--this is a weapon in EA-->
+		</group>
+		<group name="Pole Arms">
+			<item itemID="0xF4D,0xF4E" class="Bardiche" />
+			<item itemID="0x143E,0x143F" class="Halberd" />
+			<item itemID="0x26BA,0x26C4" class="Scythe" />
+		</group>
+		<group name="Spears">
+			<item itemID="0x26BD,0x26C7" class="BladedStaff" />
+			<item itemID="0x26BF,0x26C9" class="DoubleBladedStaff" />
+			<item itemID="0x26BE,0x26C8" class="Pike" />
+			<item itemID="0xE87,0xE88" class="Pitchfork" />
+			<item itemID="0x1403,0x1402" class="ShortSpear" />
+			<item itemID="0xF62,0xF63" class="Spear" />
+			<item itemID="0x1405,0x1404" class="WarFork" />
+		</group>
+		<group name="Staves">
+			<item itemID="0xDF1,0xDF0" class="BlackStaff" />
+			<item itemID="0x13F8,0x13F9" class="GnarledStaff" />
+			<item itemID="0xE89,0xE8a" class="QuarterStaff" />
+			<item itemID="0xE81,0xE82" class="ShepherdsCrook" />
+			<item itemID="0x2D25,0x2D31" class="WildStaff" />
+		</group>
+		<group name="Swords">
+			<item itemID="0x26BB,0x26C5" class="BoneHarvester" />
+			<item itemID="0xF5E,0xF5F" class="Broadsword" />
+			<item itemID="0x26C1,0x26CB" class="CrescentBlade" />
+			<item itemID="0x1441,0x1440" class="Cutlass" />
+			<item itemID="0x13FF,0x13FE" class="Katana" />
+			<item itemID="0x1401,0x1400" class="Kryss" />
+			<item itemID="0x26C0,0x26CA" class="Lance" />
+			<item itemID="0xF61,0xF60" class="Longsword" />
+			<item itemID="0x13B6,0x13B5" class="Scimitar" />
+			<item itemID="0x13B8,0x13B7" class="ThinLongsword" />
+			<item itemID="0x13B9,0x13BA" class="VikingSword" />
+			<item itemID="0x2D35,0x2D29" class="ElvenMachete" />
+			<item itemID="0x2D33,0x2D27" class="RadiantScimitar" />
+			<item itemID="0x2D32,0x2D26" class="RuneBlade" />
+			<item itemID="0x27A8,0x27F3" class="Bokuto" />
+			<item itemID="0x27A9,0x27F4" class="Daisho" />
+			<item itemID="0x27A2,0x27ED" class="NoDachi" />
+			<item itemID="0x27A4,0x27EF" class="Wakizashi" />
+		</group>
+	</group>
+	<group name="Ranged" analyze="true" class="BaseRanged">
+		<item itemID="0x13B2,0x13B1" class="Bow" />
+		<item itemID="0x26C2,0x26CC" class="CompositeBow" />
+		<item itemID="0xF50,0xF4F" class="Crossbow" />
+		<item itemID="0x13FD,0x13FC" class="HeavyCrossbow" />
+		<item itemID="0x26C3,0x26CD" class="RepeatingCrossbow" />
+		<item itemID="0x2D1E,0x2D2A" class="ElvenCompositeLongbow" />
+		<item itemID="0x2D2B,0x2D1F" class="MagicalShortbow" />
+		<item itemID="0x27A5,0x27F0" class="Yumi" />
+	</group>
+	<group name="Armor" analyze="true" class="BaseArmor">
+		<group name="Bone">
+			<item itemID="0x144E,0x1453" class="BoneArms" basePhysical="3" baseFire="3" baseCold="4" basePoison="2" baseEnergy="4" />
+			<item itemID="0x144F,0x1454" class="BoneChest" basePhysical="3" baseFire="3" baseCold="4" basePoison="2" baseEnergy="4" />
+			<item itemID="0x1450,0x1455" class="BoneGloves" basePhysical="3" baseFire="3" baseCold="4" basePoison="2" baseEnergy="4" />
+			<item itemID="0x1452,0x1457" class="BoneLegs" basePhysical="3" baseFire="3" baseCold="4" basePoison="2" baseEnergy="4" />
+		</group>
+		<group name="Chainmail">
+			<item itemID="0x13BF,0x13C4" class="ChainChest" basePhysical="4" baseFire="4" baseCold="4" basePoison="1" baseEnergy="2" />
+			<item itemID="0x2774" class="ChainHatsuburi" basePhysical="5" baseFire="2" baseCold="2" basePoison="2" baseEnergy="4" />
+			<item itemID="0x13BE,0x13C3" class="ChainLegs" basePhysical="4" baseFire="4" baseCold="4" basePoison="1" baseEnergy="2" />
+		</group>
+		<group name="Dragon">
+			<item itemID="0x2657,0x2658" class="DragonArms" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2641,0x2642" class="DragonChest" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2643,0x2644" class="DragonGloves" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2645,0x2646" class="DragonHelm" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2647,0x2648" class="DragonLegs" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+		</group>
+		<group name="Helmets">
+			<item itemID="0x140C" class="Bascinet" basePhysical="7" baseFire="2" baseCold="2" basePoison="2" baseEnergy="2" />
+			<item itemID="0x1451,0x1456" class="BoneHelm" basePhysical="3" baseFire="3" baseCold="4" basePoison="2" baseEnergy="4" />
+			<item itemID="0x13BB,0x13C0" class="ChainCoif" basePhysical="4" baseFire="4" baseCold="4" basePoison="1" baseEnergy="2" />
+			<item itemID="0x2B6E,0x3165" class="Circlet" basePhysical="1" baseFire="5" baseCold="2" basePoison="2" baseEnergy="5" />
+			<item itemID="0x1408" class="CloseHelm" basePhysical="3" baseFire="3" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2B70,0x3167" class="GemmedCirclet" basePhysical="1" baseFire="5" baseCold="2" basePoison="2" baseEnergy="5" />
+			<item itemID="0x140A" class="Helmet" basePhysical="2" baseFire="4" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x1DB9,0x1DBA" class="LeatherCap" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x140E" class="NorseHelm" basePhysical="4" baseFire="1" baseCold="4" basePoison="4" baseEnergy="2" />
+			<item itemID="0x1F0B" class="OrcHelm" basePhysical="3" baseFire="1" baseCold="3" basePoison="3" baseEnergy="5" />
+			<item itemID="0x1412" class="PlateHelm" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B71,0x3168" class="RavenHelm" basePhysical="5" baseFire="1" baseCold="2" basePoison="2" baseEnergy="5" />
+			<item itemID="0x2B6F,0x3166" class="RoyalCirclet" basePhysical="1" baseFire="5" baseCold="2" basePoison="2" baseEnergy="5" />
+			<item itemID="0x2B72,0x3169" class="VultureHelm" basePhysical="5" baseFire="1" baseCold="2" basePoison="2" baseEnergy="5" />
+			<item itemID="0x2B73,0x316A" class="WingedHelm" basePhysical="5" baseFire="1" baseCold="2" basePoison="2" baseEnergy="5" />
+		</group>
+		<group name="Leather">
+			<item itemID="0x2FCB,0x3181" class="FemaleLeafChest" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x1C06,0x1C07" class="FemaleLeatherChest" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2FC8,0x317E" class="LeafArms" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x2FC5,0x317B" class="LeafChest" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x2FC6,0x317C" class="LeafGloves" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x2FC7" class="LeafGorget" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x2FC9,0x317F" class="LeafLegs" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x2FCA,0x3180" class="LeafTonlet" basePhysical="2" baseFire="3" baseCold="2" basePoison="4" baseEnergy="4" />
+			<item itemID="0x13Cd,0x13C5" class="LeatherArms" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x1C0A,0x1C0B" class="LeatherBustierArms" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x13CC,0x13D3" class="LeatherChest" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x27C6" class="LeatherDo" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x13C6,0x13CE" class="LeatherGloves" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x13C7" class="LeatherGorget" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x278A" class="LeatherHaidate" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x277E" class="LeatherHiroSode" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2776" class="LeatherJingasa" basePhysical="4" baseFire="3" baseCold="3" basePoison="2" baseEnergy="3" />
+			<item itemID="0x13CB,0x13D2" class="LeatherLegs" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x277A" class="LeatherMempo" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x278E" class="LeatherNinjaHood" basePhysical="2" baseFire="3" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x2793" class="LeatherNinjaJacket" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2792" class="LeatherNinjaMitts" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2791" class="LeatherNinjaPants" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x1C00,0x1C01" class="LeatherShorts" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x1C08,0x1C09" class="LeatherSkirt" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+			<item itemID="0x2786" class="LeatherSuneate" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="3" />
+		</group>
+		<group name="Platemail">
+			<item itemID="0x2778" class="DecorativePlateKabuto" basePhysical="6" baseFire="2" baseCold="2" basePoison="2" baseEnergy="3" />
+			<item itemID="0x1C04,0x1C05" class="FemalePlateChest" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B6D,0x3164" class="FemaleElvenPlateChest" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2777 " class="HeavyPlateJingasa" basePhysical="7" baseFire="2" baseCold="2" basePoison="2" baseEnergy="2" />
+			<item itemID="0x2781" class="LightPlateJingasa" basePhysical="7" baseFire="2" baseCold="2" basePoison="2" baseEnergy="2" />
+			<item itemID="0x1410,0x1417" class="PlateArms" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2785" class="PlateBattleKabuto" basePhysical="6" baseFire="2" baseCold="2" basePoison="2" baseEnergy="3" />
+			<item itemID="0x1415,0x1416" class="PlateChest" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x277D" class="PlateDo" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x1414,0x1418" class="PlateGloves" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x1413" class="PlateGorget" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x278D" class="PlateHaidate" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2775" class="PlateHatsuburi" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2780" class="PlateHiroSode" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x1411,0x141A" class="PlateLegs" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2779" class="PlateMempo" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2788" class="PlateSuneate" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2784" class="SmallPlateJingasa" basePhysical="7" baseFire="2" baseCold="2" basePoison="2" baseEnergy="2" />
+			<item itemID="0x2789" class="StandardPlateKabuto" basePhysical="6" baseFire="2" baseCold="2" basePoison="2" baseEnergy="3" />
+			<item itemID="0x2B6C,0x3163" class="WoodlandArms" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B67,0x315E" class="WoodlandChest" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B6A,0x3161" class="WoodlandGloves" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B69,0x3160" class="WoodlandGorget" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B6B,0x3162" class="WoodlandLegs" basePhysical="5" baseFire="3" baseCold="2" basePoison="3" baseEnergy="2" />
+		</group>
+		<group name="Ringmail">
+			<item itemID="0x13EE,0x13EF" class="RingmailArms" basePhysical="3" baseFire="3" baseCold="1" basePoison="5" baseEnergy="3" />
+			<item itemID="0x13EC,0x13ED" class="RingmailChest" basePhysical="3" baseFire="3" baseCold="1" basePoison="5" baseEnergy="3" />
+			<item itemID="0x13EB,0x13F2" class="RingmailGloves" basePhysical="3" baseFire="3" baseCold="1" basePoison="5" baseEnergy="3" />
+			<item itemID="0x13F0,0x13F1" class="RingmailLegs" basePhysical="3" baseFire="3" baseCold="1" basePoison="5" baseEnergy="3" />
+		</group>
+		<group name="Studded">
+			<item itemID="0x1C02,0x1C03" class="FemaleStuddedChest" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x2B74,0x316B" class="HideChest" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B79,0x3170" class="HideFemaleChest" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B75,0x316C" class="HideGloves" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B76,0x316D" class="HideGorget" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B78,0x316F" class="HidePants" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x2B77,0x316E" class="HidePauldrons" basePhysical="3" baseFire="3" baseCold="4" basePoison="3" baseEnergy="2" />
+			<item itemID="0x13DC,0x13D4" class="StuddedArms" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x1C0C,0x1C0D" class="StuddedBustierArms" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x13DB,0x13E2 " class="StuddedChest" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x27C7" class="StuddedDo" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x13D5,0x13DD" class="StuddedGloves" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x278B" class="StuddedHaidate" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x277F" class="StuddedHiroSode" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4"/>
+			<item itemID="0x13DA,0x13E1" class="StuddedLegs" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x13D6" class="StuddedGorget" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x279D" class="StuddedMempo" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+			<item itemID="0x27D2" class="StuddedSuneate" basePhysical="2" baseFire="4" baseCold="3" basePoison="3" baseEnergy="4" />
+		</group>
+	</group>
+	<group name="Shields" analyze="true" class="BaseShield">
+		<item itemID="0x1B72" class="BronzeShield" basePhysical="0" baseFire="0" baseCold="1" basePoison="0" baseEnergy="0" />
+		<item itemID="0x1B73" class="Buckler" basePhysical="0" baseFire="0" baseCold="0" basePoison="1" baseEnergy="0" />
+		<item itemID="0x1BC3" class="ChaosShield" basePhysical="1" baseFire="0" baseCold="0" basePoison="0" baseEnergy="0" />
+		<item itemID="0x1B76" class="HeaterShield" basePhysical="0" baseFire="1" baseCold="0" basePoison="0" baseEnergy="0" />
+		<item itemID="0x1B74" class="MetalKiteShield" basePhysical="0" baseFire="0" baseCold="0" basePoison="0" baseEnergy="1" />
+		<item itemID="0x1B7B" class="MetalShield" basePhysical="0" baseFire="1" baseCold="0" basePoison="0" baseEnergy="0" />
+		<item itemID="0x1BC4,0x1BC5" class="OrderShield" basePhysical="1" baseFire="0" baseCold="0" basePoison="0" baseEnergy="0" />
+		<item itemID="0x1B79" class="WoodenKiteShield" basePhysical="0" baseFire="0" baseCold="0" basePoison="0" baseEnergy="1" />
+		<item itemID="0x1B7A" class="WoodenShield" basePhysical="0" baseFire="0" baseCold="0" basePoison="0" baseEnergy="1" />
+	</group>
+	<group name="Jewelry" analyze="true" class="BaseJewel">
+		<item itemID="0x108B" class="Beads" />
+		<item itemID="0x1086" class="GoldBracelet" />
+		<item itemID="0x1F06" class="SilverBracelet" />
+		<item itemID="0x1087" class="GoldEarrings" />
+		<item itemID="0x1F07" class="SilverEarrings" />
+		<item itemID="0x1085" class="Necklace" />
+		<item itemID="0x108A" class="GoldRing" />
+		<item itemID="0x1F09" class="SilverRing" />
+		<item itemID="0x1088" class="GoldNecklace" />
+		<item itemID="0x1089" class="GoldBeadNecklace" />
+		<item itemID="0x1F08" class="SilverNecklace" />
+		<item itemID="0x1F05" class="SilverBeadNecklace" />
+	</group>
+	<group name="Clothing" analyze="true" class="BaseClothing">
+		<group name="Cloaks">
+			<item itemID="0x1515,0x1530" class="Cloak" />
+			<item itemID="0x230A,0x2309" class="FurCape" />
+		</group>
+		<group name="Hats">
+			<item itemID="0x2798,0x27E3" class="Kasa" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x278F,0x27DA" class="ClothNinjaHood" basePhysical="3" baseFire="3" baseCold="6" basePoison="9" baseEnergy="9" />
+			<item itemID="0x2306,0x2305" class="FlowerGarland" basePhysical="3" baseFire="3" baseCold="6" basePoison="9" baseEnergy="9" />
+			<item itemID="0x1713" class="FloppyHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x1714" class="WideBrimHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x1715" class="Cap" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x1544" class="SkullCap" basePhysical="0" baseFire="3" baseCold="5" basePoison="8" baseEnergy="8" />
+			<item itemID="0x1540" class="Bandana" basePhysical="0" baseFire="3" baseCold="5" basePoison="8" baseEnergy="8" />
+			<item itemID="0x1545" class="BearMask" basePhysical="5" baseFire="3" baseCold="8" basePoison="4" baseEnergy="4" />
+			<item itemID="0x1547" class="DeerMask" basePhysical="2" baseFire="6" baseCold="8" basePoison="1" baseEnergy="7" />
+			<item itemID="0x1549" class="HornedTribalMask" basePhysical="6" baseFire="9" baseCold="0" basePoison="4" baseEnergy="5" />
+			<item itemID="0x154B" class="TribalMask" basePhysical="3" baseFire="0" baseCold="6" basePoison="10" baseEnergy="5" />
+			<item itemID="0x1716" class="TallStrawHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x1717" class="StrawHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x8A4" class="OrcishKinMask" basePhysical="1" baseFire="1" baseCold="7" basePoison="7" baseEnergy="8" />
+			<item itemID="0x1718" class="WizardsHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x1719" class="Bonnet" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x171A" class="FeatheredHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x171B" class="TricorneHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+			<item itemID="0x171C" class="JesterHat" basePhysical="0" baseFire="5" baseCold="9" basePoison="5" baseEnergy="5" />
+		</group>
+		<group name="Middle Torso">
+			<item itemID="0x1541,0x1542" class="BodySash" />
+			<item itemID="0x153D,0x153E" class="FullApron" />
+			<item itemID="0x1f7B,0x1F7C" class="Doublet" />
+			<item itemID="0x1FFD,0x1FFE" class="Surcoat" />
+			<item itemID="0x1FA1,0x1FA2" class="Tunic" />
+			<item itemID="0x2310,0x230F" class="FormalShirt" />
+			<item itemID="0x1F9F,0x1FA0" class="JesterSuit" />
+			<item itemID="0x27A1,0x27EC" class="JinBaori" />
+		</group>
+		<group name="Outer Legs">
+			<item itemID="0x230C,0x230B" class="FurSarong" />
+			<item itemID="0x1516,0x1531" class="Skirt" />
+			<item itemID="0x1537,0x1538" class="Kilt" />
+			<item itemID="0x279A,0x27E5" class="Hakama" />
+		</group>
+		<group name="Outer Torso">
+			<item itemID="0x230E,0x230D " class="GildedDress" />
+			<item itemID="0x1F00,0x1EFF" class="FancyDress" />
+			<item itemID="0x1F03,0x1F04" class="Robe" />
+			<item itemID="0x2687" class="MonkRobe" />
+			<item itemID="0x1F01,0x1F02" class="PlainDress" />
+			<item itemID="0x2799,0x27E4" class="Kamishimo" />
+			<item itemID="0x279C,0x27E7" class="HakamaShita" />
+			<item itemID="0x2782,0x27CD" class="MaleKimono" />
+			<item itemID="0x2783,0x27CE" class="FemaleKimono" />
+			<item itemID="0x2FB9,0x3173" class="MaleElvenRobe" />
+			<item itemID="0x2FBA,0x3174" class="FemaleElvenRobe" />
+		</group>
+		<group name="Pants">
+			<item itemID="0x152E,0x152F" class="ShortPants" />
+			<item itemID="0x1539,0x153A" class="LongPants" />
+			<item itemID="0x279B,0x27E6" class="TattsukeHakama" />
+			<item itemID="0x2FC3,0x3179" class="ElvenPants" />
+		</group>
+		<group name="Shirts">
+			<item itemID="0x1EFD,0x1EFE" class="FancyShirt" />
+			<item itemID="0x1517,0x1518" class="Shirt" />
+			<item itemID="0x2794,0x27DF" class="ClothNinjaJacket" />
+			<item itemID="0x3175" class="ElvenShirt" />
+			<item itemID="0x3176" class="ElvenDarkShirt" />
+		</group>
+		<group name="Shoes">
+			<item itemID="0x2307,0x2308" class="FurBoots" />
+			<item itemID="0x170B,0x170C" class="Boots" />
+			<item itemID="0x1711,0x1712" class="ThighBoots" />
+			<item itemID="0x170F,0x1710" class="Shoes" />
+			<item itemID="0x170D,0x170E" class="Sandals" />
+			<item itemID="0x2797,0x27E2" class="NinjaTabi" />
+			<item itemID="0x2796,0x27E1" class="SamuraiTabi" />
+			<item itemID="0x2FC4,0x317A" class="ElvenBoots" />
+		</group>
+		<group name="Waist">
+			<item itemID="0x153B,0x153C" class="HalfApron" />
+			<item itemID="0x27A0,0x27EB" class="Obi" />
+			<item itemID="0x2B68,0x315F" class="WoodlandBelt" />
+		</group>
+	</group>
+	<group name="Instruments">
+		<item itemID="0x2805" class="BambooFlute" />
+		<item itemID="0xE9C" class="Drums" />
+		<item itemID="0xEB2" class="LapHarp" />
+		<item itemID="0xEB1" class="Harp" />
+		<item itemID="0xEB3" class="Lute" />
+		<item itemID="0xE9D" class="Tambourine" />
+		<item itemID="0xE9E" class="TambourineTassel" />
+	</group>
+	<group name="Talisman">
+		<item itemID="0x2F58,0x2F59,0x2F5A,0x2F5B" class="BaseTalisman" />
+	</group>
+	<group name="Glasses">
+		<item itemID="0x2FB8" class="ElvenGlasses" />
+	</group>
+	<group name="Quivers">
+		<item itemID="0x2FB7,0x3171" class="ElvenQuiver" />
+	</group>
+	<group name="Spellbooks">
+		<item itemID="0xEFA" class="Spellbook" />
+		<item itemID="0x2D50" class="SpellweavingBook" />
+		<item itemID="0x238C" class="BookOfBushido" />
+		<item itemID="0x2252" class="BookOfChivalry" />
+		<item itemID="0x2253" class="NecromancerSpellbook" />
+	</group>
+	<group name="Gold">
+		<item itemID="0xEED,0xEEE,0xEEF" class="Gold" />
+	</group>
+</items>

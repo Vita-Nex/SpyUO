@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="ProductNameRoot">SpyUO 2.0</String>
+	<String Id="ProductName">SpyUO 2.0</String>
+	<String Id="LicenseAgreementDlgTitle" Overridable="yes">{\TitleFont}End-User License Agreement</String>
+	<String Id="LicenseAgreementDlgDescription" Overridable="yes">{\SubtitleFont}Please read the following license agreement carefully</String>
+
+	<String Id="SetupTypeDlgTitle" Overridable="yes">{\TitleFont}Choose Setup Type</String>
+	<String Id="SetupTypeDlgDescription" Overridable="yes">{\SubtitleFont}Choose the setup type that best suits your needs</String>
+
+	<String Id="CustomizeDlgTitle" Overridable="yes">{\TitleFont}Custom Setup</String>
+	<String Id="CustomizeDlgDescription" Overridable="yes">{\SubtitleFont}Select the way you want features to be installed.</String>
+
+	<String Id="BrowseDlgTitle" Overridable="yes">{\TitleFont}Change destination folder</String>
+	<String Id="BrowseDlgDescription" Overridable="yes">{\SubtitleFont}Browse to the destination folder</String>
+
+	<String Id="DiskCostDlgTitle" Overridable="yes">{\TitleFont}Disk Space Requirements</String>
+	<String Id="DiskCostDlgDescription" Overridable="yes">{\SubtitleFont}The disk space required for the installation of the selected features.</String>
+
+	<String Id="FeaturesDlgTitle" Overridable="yes">{\TitleFont}Product Features</String>
+
+	<String Id="FilesInUseTitle" Overridable="yes">{\TitleFont}Files in Use</String>
+	<String Id="FilesInUseDescription" Overridable="yes">{\SubtitleFont}Some files that need to be updated are currently in use.</String>
+
+	<String Id="ProgressDlgTitleInstalling" Overridable="yes">{\TitleFont}Installing [ProductName]</String>
+	<String Id="ProgressDlgTitleChanging" Overridable="yes">{\TitleFont}Changing [ProductName]</String>
+	<String Id="ProgressDlgTitleRepairing" Overridable="yes">{\TitleFont}Repairing [ProductName]</String>
+	<String Id="ProgressDlgTitleRemoving" Overridable="yes">{\TitleFont}Removing [ProductName]</String>
+
+	<String Id="VerifyReadyDlgInstallTitle" Overridable="yes">{\TitleFont}Ready to install [ProductName]</String>
+	<String Id="VerifyReadyDlgChangeTitle" Overridable="yes">{\TitleFont}Ready to change [ProductName]</String>
+	<String Id="VerifyReadyDlgRepairTitle" Overridable="yes">{\TitleFont}Ready to repair [ProductName]</String>
+	<String Id="VerifyReadyDlgRemoveTitle" Overridable="yes">{\TitleFont}Ready to remove [ProductName]</String>
+
+	<String Id="MaintenanceTypeDlgTitle" Overridable="yes">{\TitleFont}Change, repair, or remove installation</String>
+	<String Id="MaintenanceTypeDlgDescription" Overridable="yes">{\SubtitleFont}Select the operation you wish to perform.</String>
+
+	<String Id="VerifyReadyDlgInstallTitle" Overridable="yes">{\TitleFont}Ready to install [ProductName]</String>
+</WixLocalization>

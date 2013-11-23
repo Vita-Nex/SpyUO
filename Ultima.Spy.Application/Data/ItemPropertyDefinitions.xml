@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<properties>
+	<!-- Used for generating C# properties from property list packet.
+
+			switch: Provide different property values based on cliloc parameter (useful for enums)
+					id - Used to reference switch later on (mandatory)
+
+					case: Switch entry.
+							constant: Cliloc to switch by (mandatory)
+							value: Property value
+	
+			core: Core properties such as weight,..
+			runic: Properties which can be applied by runic tools or loot generator
+
+			property: Can contain multiple setters. Describes property with following attributes. 
+					cliloc - Property cliloc (mandatory for regular properties)(can be separated by comma)
+					group - Property only applies to specific group of items
+
+			setter: RunUO property setter (engine distincts two types: override and constructor)
+					cliloc - Property cliloc (mandatory for enum properties)(can be separated by comma)
+					type - Setter type. Can be:
+						- constructor - Property value is set in constructor (default).
+						- override - Property value is set by overriding parent value.
+					name - Property name (mandatory)
+					format - Property value format (optional) used in String.Format (http:" name="Slayer" format="SlayerName.Some" />msdn.microsoft.com/en-us/library/system.string.format.aspx)
+					returnType - Override return format (mandatory for override setters)-->
+
+	<!--Slayer-->
+	<switch id="Slayers">
+		<case constant="1060479" value="SlayerName.Silver" />
+		<case constant="1060470" value="SlayerName.OrcSlaying" />
+		<case constant="1060480" value="SlayerName.TrollSlaughter" />
+		<case constant="1060468" value="SlayerName.OgreTrashing" />
+		<case constant="1060472" value="SlayerName.Repond" />
+		<case constant="1060462" value="SlayerName.DragonSlaying" />
+		<case constant="1060478" value="SlayerName.Terathan" />
+		<case constant="1060475" value="SlayerName.SnakesBane" />
+		<case constant="1060467" value="SlayerName.LizardmanSlaughter" />
+		<case constant="1060473" value="SlayerName.ReptilianDeath" />
+		<case constant="1060460" value="SlayerName.DaemonDismissal" />
+		<case constant="1060466" value="SlayerName.GargoylesFoe" />
+		<case constant="1017396" value="SlayerName.BalronDamnation" />
+		<case constant="1060461" value="SlayerName.Exorcism" />
+		<case constant="1060469" value="SlayerName.Ophidian" />
+		<case constant="1060477" value="SlayerName.SpidersDeath" />
+		<case constant="1060474" value="SlayerName.ScorpionsBane" />
+		<case constant="1060458" value="SlayerName.ArachnidDoom" />
+		<case constant="1060465" value="SlayerName.FlameDousing" />
+		<case constant="1060481" value="SlayerName.WaterDissipation" />
+		<case constant="1060457" value="SlayerName.Vacuum" />
+		<case constant="1060471" value="SlayerName.ElementalHealth" />
+		<case constant="1060463" value="SlayerName.EarthShatter" />
+		<case constant="1060459" value="SlayerName.BloodDrinking" />
+		<case constant="1060476" value="SlayerName.SummerWind" />
+		<case constant="1060464" value="SlayerName.ElementalBan" />
+		<case constant="1070855" value="SlayerName.Fey" />
+	</switch>
+
+	<switch id="Skills">
+		<case constant="1002070" value="SkillName.EvalInt" />
+		<case constant="1002078" value="SkillName.Forensics" />
+		<case constant="1002097" value="SkillName.Lockpicking" />
+		<case constant="1044060" value="SkillName.Alchemy" />
+		<case constant="1044061" value="SkillName.Anatomy" />
+		<case constant="1044062" value="SkillName.AnimalLore" />
+		<case constant="1044063" value="SkillName.ItemID" />
+		<case constant="1044064" value="SkillName.ArmsLore" />
+		<case constant="1044065" value="SkillName.Parry" />
+		<case constant="1044066" value="SkillName.Begging" />
+		<case constant="1044067" value="SkillName.Blacksmith" />
+		<case constant="1044068" value="SkillName.Fletching" />
+		<case constant="1044069" value="SkillName.Peacemaking" />
+		<case constant="1044070" value="SkillName.Camping" />
+		<case constant="1044071" value="SkillName.Carpentry" />
+		<case constant="1044072" value="SkillName.Cartography" />
+		<case constant="1044073" value="SkillName.Cooking" />
+		<case constant="1044074" value="SkillName.DetectHidden" />
+		<case constant="1044075" value="SkillName.Discordance" />
+		<case constant="1044076" value="SkillName.EvalInt" />
+		<case constant="1044077" value="SkillName.Healing" />
+		<case constant="1044078" value="SkillName.Fishing" />
+		<case constant="1044079" value="SkillName.Forensics" />
+		<case constant="1044080" value="SkillName.Herding" />
+		<case constant="1044081" value="SkillName.Hiding" />
+		<case constant="1044082" value="SkillName.Provocation" />
+		<case constant="1044083" value="SkillName.Inscribe" />
+		<case constant="1044084" value="SkillName.Lockpicking" />
+		<case constant="1044085" value="SkillName.Magery" />
+		<case constant="1044086" value="SkillName.MagicResist" />
+		<case constant="1044087" value="SkillName.Tactics" />
+		<case constant="1044088" value="SkillName.Snooping" />
+		<case constant="1044089" value="SkillName.Musicianship" />
+		<case constant="1044090" value="SkillName.Poisoning" />
+		<case constant="1044091" value="SkillName.Archery" />
+		<case constant="1044092" value="SkillName.SpiritSpeak" />
+		<case constant="1044093" value="SkillName.Stealing" />
+		<case constant="1044094" value="SkillName.Tailoring" />
+		<case constant="1044095" value="SkillName.AnimalTaming" />
+		<case constant="1044096" value="SkillName.TasteID" />
+		<case constant="1044097" value="SkillName.Tinkering" />
+		<case constant="1044098" value="SkillName.Tracking" />
+		<case constant="1044099" value="SkillName.Veterinary" />
+		<case constant="1044101" value="SkillName.Macing" />
+		<case constant="1044102" value="SkillName.Fencing" />
+		<case constant="1044103" value="SkillName.Wrestling" />
+		<case constant="1044104" value="SkillName.Lumberjacking" />
+		<case constant="1044105" value="SkillName.Mining" />
+		<case constant="1044106" value="SkillName.Meditation" />
+		<case constant="1044107" value="SkillName.Stealth" />
+		<case constant="1044108" value="SkillName.RemoveTrap" />
+		<case constant="1044109" value="SkillName.Necromancy" />
+		<case constant="1044110" value="SkillName.Focus" />
+		<case constant="1044111" value="SkillName.Chivalry" />
+		<case constant="1044112" value="SkillName.Bushido" />
+		<case constant="1044113" value="SkillName.Ninjitsu" />
+		<case constant="1044114" value="SkillName.Spellweaving" />
+		<case constant="1044115" value="SkillName.Mysticism" />
+		<case constant="1044116" value="SkillName.Imbuing" />
+		<case constant="1044117" value="SkillName.Throwing" />
+	</switch>
+
+	<switch id="RequiredSkills">
+		<case constant="1061172" value="SkillName.Swords" />
+		<case constant="1061173" value="SkillName.Macing" />
+		<case constant="1061174" value="SkillName.Archery" />
+		<case constant="1061175" value="SkillName.Fencing" />
+	</switch>
+
+	<misc>
+		<property cliloc="1060639">
+			<setter index="0" type="override" returnType="int" name="InitMinHits"  />
+			<setter index="1" type="override" returnType="int" name="InitMaxHits"  />
+		</property>
+		<property cliloc="1061167">
+			<setter index="0" type="override" returnType="int" name="OldSpeed"  />
+			<setter index="0" type="override" returnType="int" name="AosSpeed"  />
+			<setter index="0" type="override" returnType="int" name="MlSpeed"  />
+		</property>
+		<property cliloc="1061168">
+			<setter index="0" type="override" returnType="int" name="OldMinDamage"  />
+			<setter index="1" type="override" returnType="int" name="OldMaxDamage"  />
+			<setter index="0" type="override" returnType="int" name="AosMinDamage"  />
+			<setter index="1" type="override" returnType="int" name="AosMaxDamage"  />
+		</property>
+		<property cliloc="1061169">
+			<setter type="override" returnType="int" name="DefMaxRange" />
+		</property>
+		<property cliloc="1075086">
+			<setter type="override" returnType="Race" name="RequiredRace" format="Race.Elf" />
+		</property>
+		<property cliloc="1061170">
+			<setter index="0" type="override" returnType="int" name="OldStrengthReq" />
+			<setter index="0" type="override" returnType="int" name="AosStrengthReq" />
+		</property>
+		<property cliloc="1072788,1072789,1072225">
+			<setter name="Weight" />
+		</property>
+		<property switch="RequiredSkills">
+			<setter type="override" returnType="SkillName" name="DefSkill" />
+		</property>
+		<property cliloc="1060448">
+			<setter type="override" returnType="int" name="PhysicalResistance" />
+		</property>
+		<property cliloc="1060447">
+			<setter type="override" returnType="int" name="FireResistance" />
+		</property>
+		<property cliloc="1060445">
+			<setter type="override" returnType="int" name="ColdResistance" />
+		</property>
+		<property cliloc="1060449">
+			<setter type="override" returnType="int" name="PoisonResistance" />
+		</property>
+		<property cliloc="1060446">
+			<setter type="override" returnType="int" name="EnergyResistance" />
+		</property>
+		<property cliloc="1073841">
+			<setter index="1" type="override" returnType="int" name="DefaultMaxItems" />
+		</property>
+		<property cliloc="1072241">
+			<setter index="1" type="override" returnType="int" name="DefaultMaxItems" />
+			<setter index="3" type="override" returnType="int" name="DefaultMaxWeight" />
+		</property>
+
+		<!--Ignore properties-->
+		<property cliloc="1061171,1061824" /> <!--one/two-handed weapon is set via item data-->
+		<property cliloc="1042886" /> <!--~1_NUMBERS_OF_SPELLS~ Spells-->
+		<property cliloc="1050043" /> <!--crafted by ~1_NAME~-->
+		<property cliloc="1041350" /> <!--faction item-->
+		<property cliloc="1060403,1060405,1060404,1060406,1060407,1072846,1079978" /> <!--weapon damages are treated seperately in code-->
+		<property cliloc="1050044" /> <!--No useful info from nr. items and weight-->
+	</misc>
+
+	<runic>
+		<!--AOS Properties-->
+		<property cliloc="1060444" min="1" max="2">
+			<setter name="Attributes.RegenHits" />
+		</property>
+		<property cliloc="1060443" min="1" max="3">
+			<setter name="Attributes.RegenStam" />
+		</property>
+		<property cliloc="1060440" min="1" max="2">
+			<setter name="Attributes.RegenMana" />
+		</property>
+		<property cliloc="1060408" min="1" max="15">
+			<setter name="Attributes.DefendChance" />
+		</property>
+		<property cliloc="1060415" min="1" max="15">
+			<setter name="Attributes.AttackChance" />
+		</property>
+		<property cliloc="1060485">
+			<setter name="Attributes.BonusStr" min="1" max="8" />
+		</property>
+		<property cliloc="1060409">
+			<setter name="Attributes.BonusDex" min="1" max="8" />
+		</property>
+		<property cliloc="1060432">
+			<setter name="Attributes.BonusInt" min="1" max="8" />
+		</property>
+		<property cliloc="1060431">
+			<setter name="Attributes.BonusHits"  min="1" max="5" />
+		</property>
+		<property cliloc="1060484">
+			<setter name="Attributes.BonusStam" min="1" max="8" />
+		</property>
+		<property cliloc="1060439">
+			<setter name="Attributes.BonusMana" min="1" max="8" />
+		</property>
+		<property cliloc="1060401">
+			<setter name="Attributes.WeaponDamage"  min="1" max="50" />
+		</property>
+		<property cliloc="1060486">
+			<setter name="Attributes.WeaponSpeed" min="5" max="30" />
+		</property>
+		<property cliloc="1060483">
+			<setter name="Attributes.SpellDamage" min="1" max="12" />
+		</property>
+		<property cliloc="1060412">
+			<setter name="Attributes.CastRecovery" min="1" max="3" />
+		</property>
+		<property cliloc="1060413">
+			<setter name="Attributes.CastSpeed" />
+		</property>
+		<property cliloc="1060433">
+			<setter name="Attributes.LowerManaCost" min="1" max="8" />
+		</property>
+		<property cliloc="1060434">
+			<setter name="Attributes.LowerRegCost" min="1" max="20" />
+		</property>
+		<property cliloc="1060442">
+			<setter name="Attributes.ReflectPhysical" min="1" max="15" />
+		</property>
+		<property cliloc="1060411">
+			<setter name="Attributes.EnhancePotions" min="5" max="25" />
+		</property>
+		<property cliloc="1060436">
+			<setter name="Attributes.Luck"  min="1" max="100" />
+		</property>
+		<property cliloc="1060482">
+			<setter name="Attributes.SpellChanneling" />
+		</property>
+		<property cliloc="1060441">
+			<setter name="Attributes.NightSight" />
+		</property>
+		<property cliloc="1075210">
+			<setter name="Attributes.IncreasedKarmaLoss" />
+		</property>
+
+		<!--Weapon Hit Area-->
+		<property cliloc="1060428" min="2" max="50">
+			<setter name="WeaponAttributes.HitPhysicalArea" />
+		</property>
+		<property cliloc="1060419" min="2" max="50">
+			<setter name="WeaponAttributes.HitFireArea" />
+		</property>
+		<property cliloc="1060416" min="2" max="50">
+			<setter name="WeaponAttributes.HitColdArea" />
+		</property>
+		<property cliloc="1060429" min="2" max="50">
+			<setter name="WeaponAttributes.HitPoisonArea" />
+		</property>
+		<property cliloc="1060418" min="2" max="50">
+			<setter name="WeaponAttributes.HitEnergyArea" />
+		</property>
+
+		<!--Weapon Hit Damage-->
+		<property cliloc="1060426" min="2" max="50">
+			<setter name="WeaponAttributes.HitMagicArrow" />
+		</property>
+		<property cliloc="1060421" min="2" max="50">
+			<setter name="WeaponAttributes.HitHarm" />
+		</property>
+		<property cliloc="1060420" min="2" max="50">
+			<setter name="WeaponAttributes.HitFireball" />
+		</property>
+		<property cliloc="1060423" min="2" max="50">
+			<setter name="WeaponAttributes.HitLightning" />
+		</property>
+		
+		<!--Weapon Hit Misc-->
+		<property cliloc="1060417" min="2" max="50">
+			<setter name="WeaponAttributes.HitDispel" />
+		</property>
+		<property cliloc="1060422" min="2" max="50">
+			<setter name="WeaponAttributes.HitLeechHits" />
+		</property>
+		<property cliloc="1060424" min="2" max="50">
+			<setter name="WeaponAttributes.HitLowerAttack" />
+		</property>
+		<property cliloc="1060425" min="2" max="50">
+			<setter name="WeaponAttributes.HitLowerDefend" />
+		</property>
+		<property cliloc="1060427" min="2" max="50">
+			<setter name="WeaponAttributes.HitLeechMana" />
+		</property>
+		<property cliloc="1060430" min="2" max="50">
+			<setter name="WeaponAttributes.HitLeechStam" />
+		</property>
+
+		<!--Weapon Resist-->
+		<property cliloc="1060448" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistPhysicalBonus" />
+		</property>
+		<property cliloc="1060447" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistFireBonus" />
+		</property>
+		<property cliloc="1060445" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistColdBonus" />
+		</property>
+		<property cliloc="1060449" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistPoisonBonus" />
+		</property>
+		<property cliloc="1060446" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistEnergyBonus" />
+		</property>
+		<property cliloc="1072846" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistChaosBonus" />
+		</property>
+		<property cliloc="1079978" group="Weapons" min="1" max="15">
+			<setter name="WeaponAttributes.ResistDirectBonus" />
+		</property>
+
+		<!--Weapon Misc-->
+		<property cliloc="1060400" group="Weapons">
+			<setter name="WeaponAttributes.UseBestSkill" />
+		</property>
+		<property cliloc="1060438" group="Weapons" min="1" max="10">
+			<setter name="WeaponAttributes.MageWeapon" />
+		</property>
+		<property cliloc="1060435" group="Weapons" min="10" max="100">
+			<setter name="WeaponAttributes.LowerStatReq" />
+		</property>
+		<property cliloc="1060410" group="Weapons" min="10" max="100">
+			<setter name="WeaponAttributes.DurabilityBonus" />
+		</property>
+		<property cliloc="1060450" group="Weapons" min="1" max="5" >
+			<setter name="WeaponAttributes.SelfRepair" />
+		</property>
+		<property switch="Slayers">
+			<setter name="Slayer" />
+		</property>
+
+		<!--Armor Resist-->
+		<property cliloc="1060448" group="Armor" min="1" max="15">
+			<setter name="PhysicalBonus" />
+		</property>
+		<property cliloc="1060447" group="Armor" min="1" max="15">
+			<setter name="FireBonus" />
+		</property>
+		<property cliloc="1060445" group="Armor" min="1" max="15">
+			<setter name="ColdBonus" />
+		</property>
+		<property cliloc="1060449" group="Armor" min="1" max="15">
+			<setter name="PoisonBonus" />
+		</property>
+		<property cliloc="1060446" group="Armor" min="1" max="15">
+			<setter name="EnergyBonus" />
+		</property>
+		<property cliloc="1072846" group="Armor" min="1" max="15">
+			<setter name="ChaosBonus" />
+		</property>
+		<property cliloc="1079978" group="Armor" min="1" max="15">
+			<setter name="DirectBonus" />
+		</property>
+
+		<!--Armor Misc-->
+		<property cliloc="1060400" group="Armor" min="10" max="100">
+			<setter name="ArmorAttributes.LowerStatReq" />
+		</property>
+		<property cliloc="1060438" group="Armor">
+			<setter name="ArmorAttributes.MageArmor" />
+		</property>
+		<property cliloc="1060410" group="Armor" min="10" max="100">
+			<setter name="ArmorAttributes.DurabilityBonus" />
+		</property>
+		<property cliloc="1060450" group="Armor">
+			<setter name="ArmorAttributes.SelfRepair" min="1" max="5" />
+		</property>
+
+		<!--Skills-->
+		<property cliloc="1060451" min="1" max="15">
+			<setter name="SkillBonuses.Skill_1_Name" switch="Skills" />
+			<setter name="SkillBonuses.Skill_1_Value" />
+		</property>
+		<property cliloc="1060452" min="1" max="15">
+			<setter name="SkillBonuses.Skill_2_Name" switch="Skills" />
+			<setter name="SkillBonuses.Skill_2_Value" />
+		</property>
+		<property cliloc="1060453" min="1" max="15">
+			<setter name="SkillBonuses.Skill_3_Name" switch="Skills" />
+			<setter name="SkillBonuses.Skill_3_Value" />
+		</property>
+		<property cliloc="1060454" min="1" max="15">
+			<setter name="SkillBonuses.Skill_4_Name" switch="Skills" />
+			<setter name="SkillBonuses.Skill_4_Value" />
+		</property>
+		<property cliloc="1060455" min="1" max="15">
+			<setter name="SkillBonuses.Skill_5_Name" switch="Skills" />
+			<setter name="SkillBonuses.Skill_5_Value" />
+		</property>
+	</runic>
+</properties>

@@ -1,0 +1,117 @@
+﻿<Window x:Class="Ultima.Spy.Application.ProcessListWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:this="clr-namespace:Ultima.Spy.Application"
+		Icon="/SpyUO;component/SpyUO.ico"
+		Title="Select Process" Height="400" Width="350" UseLayoutRounding="True" SnapsToDevicePixels="True"
+		WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+	<Window.Resources>
+		<Style x:Key="ProcessHeader" TargetType="Border">
+			<Setter Property="Background" Value="{StaticResource PanelBackground}" />
+			<Setter Property="CornerRadius" Value="0,0,3,3" />
+		</Style>
+
+		<Style x:Key="ProcessTitle" TargetType="TextBlock">
+			<Setter Property="Background" Value="{StaticResource PanelBackground}" />
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Margin" Value="4" />
+			<Setter Property="FontSize" Value="14" />
+		</Style>
+
+		<Style x:Key="ProcessContent" TargetType="Border">
+			<Setter Property="Background" Value="{StaticResource PanelBackground}" />
+			<Setter Property="CornerRadius" Value="3" />
+			<Setter Property="Margin" Value="0,1" />
+		</Style>
+
+		<Style x:Key="ProcessItemName" TargetType="TextBlock">
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+
+		<DataTemplate x:Key="ProcessListItemTemplate">
+			<TextBlock Text="{Binding ProcessName}" Style="{StaticResource ProcessItemName}" Margin="2"/>
+		</DataTemplate>
+
+		<Style x:Key="ProcessList" TargetType="ListBox" BasedOn="{StaticResource DefaultListBox}">
+			<Setter Property="ItemTemplate" Value="{StaticResource ProcessListItemTemplate}" />
+			<Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="False" />
+		</Style>
+
+
+		<Style x:Key="ProcessFooter" TargetType="Border">
+			<Setter Property="Background" Value="{StaticResource PanelBackground}" />
+			<Setter Property="CornerRadius" Value="3,3,0,0" />
+		</Style>
+
+		<Style x:Key="ProcessButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+			<Setter Property="Width" Value="24" />
+			<Setter Property="Margin" Value="3" />
+		</Style>
+
+		<Style x:Key="ProcessButtonImage" TargetType="Image">
+			<Setter Property="Width" Value="16" />
+			<Setter Property="Height" Value="16" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+
+		<Style x:Key="ProcessIcon" TargetType="Image">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="MaxWidth" Value="20" />
+			<Setter Property="MaxHeight" Value="20" />
+			<Setter Property="Margin" Value="2" />
+		</Style>
+
+		<Style x:Key="ProcessName" TargetType="TextBlock">
+			<Setter Property="Foreground" Value="{StaticResource PanelForeground}" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="FontSize" Value="14" />
+		</Style>
+
+	</Window.Resources>
+
+	<Grid Background="{StaticResource ListBackground}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="30" />
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Style="{StaticResource ProcessHeader}">
+			<TextBlock x:Name="Header" Text="Process List" Style="{StaticResource ProcessTitle}" />
+		</Border>
+
+		<Border Grid.Row="1" Style="{StaticResource ProcessContent}">
+			<ListBox x:Name="List" SelectionChanged="ProcessList_SelectionChanged" Style="{StaticResource ProcessList}" />
+		</Border>
+
+		<Border Grid.Row="2" Style="{StaticResource ProcessFooter}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+
+				<StackPanel Grid.Column="0" Orientation="Horizontal">
+					<Button Click="RefreshButton_Click" Style="{StaticResource ProcessButton}" ToolTip="Refresh process list">
+						<Image Source="Images/Refresh.png" Style="{StaticResource ProcessButtonImage}" />
+					</Button>
+					<Image x:Name="ProcessImage" Style="{StaticResource ProcessIcon}" />
+					<TextBlock x:Name="ProcessName" Style="{StaticResource ProcessName}" />
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Orientation="Horizontal" >
+					<Button Click="CancelButton_Click" Style="{StaticResource ProcessButton}" ToolTip="Cancel">
+						<Image Source="Images/Cancel.png" Style="{StaticResource ProcessButtonImage}" />
+					</Button>
+					<Button Click="AcceptButton_Click" Style="{StaticResource ProcessButton}" ToolTip="Start spying on selected process">
+						<Image Source="Images/Accept.png" Style="{StaticResource ProcessButtonImage}" />
+					</Button>
+				</StackPanel>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>

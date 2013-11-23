@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Ultima.Spy.Application.UltimaPacketBinaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"  Background="{StaticResource WindowBackground}"
+			 DataContext="{Binding Packet,RelativeSource={RelativeSource Self}}"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+	<UserControl.Resources>
+		<Style x:Key="BinaryText" TargetType="TextBox" BasedOn="{StaticResource ReadOnlyTextBox}">
+			<Setter Property="Margin" Value="2" />
+			<Setter Property="FontFamily" Value="Courier New" />
+			<Setter Property="VerticalAlignment" Value="Top" />
+		</Style>
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="22" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<!-- Header -->
+		<Border Grid.Row="0" Style="{StaticResource ToolbarBorder}">
+			<Label Content="Binary Data" Style="{StaticResource ToolbarTitleText}" />
+		</Border>
+
+		<!-- Control Panel -->
+		<Border Grid.Row="1" Style="{StaticResource ToolbarBorder}" Margin="0,2">
+			<StackPanel Orientation="Horizontal">
+				<Button Style="{StaticResource ToolbarButton}" Click="Save_Click" Visibility="Collapsed" x:Name="Save" ToolTip="Save binary data" Command="Save">
+					<Image Source="/SpyUO;component/Images/Save.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+				<Button Style="{StaticResource ToolbarButton}" Click="Open_Click" Visibility="Collapsed" x:Name="Open" ToolTip="Open in a new window" Command="Open">
+					<Image Source="/SpyUO;component/Images/Window.png" Style="{StaticResource ToolbarButtonImage}" />
+				</Button>
+			</StackPanel>
+		</Border>
+
+		<!-- Properties -->
+		<Border Grid.Row="2" Style="{StaticResource ToolbarBorder}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<TextBox Grid.Column="0" x:Name="Binary" Style="{StaticResource BinaryText}" />
+				<TextBox Grid.Column="1" x:Name="Text" Style="{StaticResource BinaryText}" />
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>
